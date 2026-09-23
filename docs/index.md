@@ -13,7 +13,7 @@ layout: home
       <div class="hlju-home-actions" aria-label="主要入口">
         <a class="hlju-home-button hlju-home-button-primary" href="/quickstart/join-guide">开始进服</a>
         <a class="hlju-home-button hlju-home-button-secondary" href="/quickstart/launcher">启动器设置</a>
-        <a class="hlju-home-button hlju-home-button-secondary" href="https://skin.qlu.life">认证站</a>
+        <a class="hlju-home-button hlju-home-button-secondary" href="https://skin.hljumc.cn">认证站</a>
       </div>
     </div>
     <div class="hlju-home-visual" aria-label="Minecraft 生存场景">

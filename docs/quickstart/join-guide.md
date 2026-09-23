@@ -10,7 +10,7 @@
 
 ## 一、注册认证账号
 
-1. 打开 [HLJUMC 认证站注册页](https://skin.qlu.life)。
+1. 打开 [HLJUMC 认证站注册页](https://skin.hljumc.cn)。
 2. “用户名”默认填写学号。这个用户名是认证账号名，不是稍后创建的游戏玩家名。
 3. 填写校园邮箱。系统只接受 `@s.hlju.edu.cn` 或 `@hlju.edu.cn` 后缀。
 4. 设置密码，按页面提示创建账户。
@@ -60,7 +60,7 @@
 启动器必须使用下面的验证服务器：
 
 ```text
-https://skin.qlu.life/api/yggdrasil
+https://skin.hljumc.cn/api/yggdrasil
 ```
 
 PCL 和 HMCL 的具体操作见[启动器设置](./launcher)。配置好后，用认证站的账号名和密码登录，并选择刚创建的玩家。

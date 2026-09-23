@@ -3,10 +3,10 @@
 HLJUMC 使用 Authlib Injector 外置登录。无论用 PCL 还是 HMCL，都要填写同一个验证服务器地址：
 
 ```text
-https://skin.qlu.life/api/yggdrasil
+https://skin.hljumc.cn/api/yggdrasil
 ```
 
-注册入口是 [HLJUMC 认证站](https://skin.qlu.life/login?mode=register)。还没有账号或玩家角色时，请先完成[进服指南](./join-guide)前四节。
+注册入口是 [HLJUMC 认证站](https://skin.hljumc.cn/login?mode=register)。还没有账号或玩家角色时，请先完成[进服指南](./join-guide)前四节。
 
 ::: warning 外置登录的范围
 外置登录只负责 HLJUMC 的身份验证和材质加载，不能代替正版账号登录其他正版验证服务器。
@@ -24,8 +24,8 @@ PCL 的第三方登录设置通常跟随游戏实例。新建或更换实例后�
 
 | 项目 | 内容 |
 | --- | --- |
-| 认证服务器 | `https://skin.qlu.life/api/yggdrasil` |
-| 注册链接 | `https://skin.qlu.life/login?mode=register` |
+| 认证服务器 | `https://skin.hljumc.cn/api/yggdrasil` |
+| 注册链接 | `https://skin.hljumc.cn/login?mode=register` |
 | 服务器名称 | `HLJUMC` |
 
 6. 如果页面上有“设置为 LittleSkin”按钮，不要点击。它会把认证服务器改成 LittleSkin 的地址，而不是 HLJUMC。
@@ -50,7 +50,7 @@ PCL 的第三方登录设置通常跟随游戏实例。新建或更换实例后�
 4. 输入验证服务器地址：
 
 ```text
-https://skin.qlu.life/api/yggdrasil
+https://skin.hljumc.cn/api/yggdrasil
 ```
 
 5. 确认添加。启动器应显示 HLJUMC 认证服务器。
@@ -83,7 +83,7 @@ https://skin.qlu.life/api/yggdrasil
 
 ### 提示账号或密码错误
 
-确认填写的是认证站账号，而不是临时起的玩家名称。也可以先在[认证站登录页](https://skin.qlu.life/login)测试账号和密码是否正确。
+确认填写的是认证站账号，而不是临时起的玩家名称。也可以先在[认证站登录页](https://skin.hljumc.cn/login)测试账号和密码是否正确。
 
 ### 启动后仍然是离线登录或正版登录
 
@@ -94,7 +94,7 @@ https://skin.qlu.life/api/yggdrasil
 重新复制下面的地址，注意不要带句号、中文括号或前后空格：
 
 ```text
-https://skin.qlu.life/api/yggdrasil
+https://skin.hljumc.cn/api/yggdrasil
 ```
 
 ### 不想手动设置

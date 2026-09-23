@@ -21,8 +21,8 @@ flowchart LR
 
 | 项目 | 内容 |
 | --- | --- |
-| 认证服务器 | `https://skin.qlu.life/api/yggdrasil` |
-| 注册链接 | [https://skin.qlu.life/login?mode=register](https://skin.qlu.life/login?mode=register) |
+| 认证服务器 | `https://skin.hljumc.cn/api/yggdrasil` |
+| 注册链接 | [https://skin.hljumc.cn/login?mode=register](https://skin.hljumc.cn/login?mode=register) |
 | 服务器名称 | `HLJUMC` |
 | 服务器地址 | `mc.hljumc.cn` |
 
