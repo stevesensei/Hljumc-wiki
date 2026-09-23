@@ -1,0 +1,72 @@
+name: Deploy VitePress docs to Tencent COS
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-docs-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: '22'
+  PNPM_VERSION: '10'
+
+jobs:
+  build-and-deploy:
+    name: Build and upload docs
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate COS settings
+        env:
+          COS_SECRET_ID: ${{ secrets.TENCENT_COS_SECRET_ID }}
+          COS_SECRET_KEY: ${{ secrets.TENCENT_COS_SECRET_KEY }}
+          COS_BUCKET: ${{ vars.TENCENT_COS_BUCKET }}
+          COS_REGION: ${{ vars.TENCENT_COS_REGION }}
+          COS_REMOTE_PATH: ${{ vars.TENCENT_COS_REMOTE_PATH }}
+        run: |
+          test -n "$COS_SECRET_ID" || { echo "::error::Missing secret TENCENT_COS_SECRET_ID"; exit 1; }
+          test -n "$COS_SECRET_KEY" || { echo "::error::Missing secret TENCENT_COS_SECRET_KEY"; exit 1; }
+          test -n "$COS_BUCKET" || { echo "::error::Missing variable TENCENT_COS_BUCKET"; exit 1; }
+          test -n "$COS_REGION" || { echo "::error::Missing variable TENCENT_COS_REGION"; exit 1; }
+          test -n "$COS_REMOTE_PATH" || { echo "::error::Missing variable TENCENT_COS_REMOTE_PATH"; exit 1; }
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: ${{ env.PNPM_VERSION }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build VitePress site
+        run: pnpm docs:build
+
+      - name: Verify build output
+        run: test -f .vitepress/dist/index.html
+
+      - name: Upload site to Tencent COS
+        uses: TencentCloud/cos-action@v1
+        with:
+          secret_id: ${{ secrets.TENCENT_COS_SECRET_ID }}
+          secret_key: ${{ secrets.TENCENT_COS_SECRET_KEY }}
+          cos_bucket: ${{ vars.TENCENT_COS_BUCKET }}
+          cos_region: ${{ vars.TENCENT_COS_REGION }}
+          local_path: .vitepress/dist
+          remote_path: ${{ vars.TENCENT_COS_REMOTE_PATH }}
+          clean: true
