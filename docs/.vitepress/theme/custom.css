@@ -1,0 +1,184 @@
+:root {
+  --hlju-surface-primary: #fbfaf7;
+  --hlju-surface-secondary: #f4f1ea;
+  --hlju-surface-elevated: #ffffff;
+  --hlju-text-primary: #1d2430;
+  --hlju-text-secondary: #566170;
+  --hlju-text-tertiary: #7b8490;
+  --hlju-border-default: #dfe3e7;
+  --hlju-border-subtle: #ece9e2;
+  --hlju-accent-primary: #174a78;
+  --hlju-accent-hover: #0e3558;
+  --hlju-status-warning: #a46718;
+
+  --vp-c-bg: var(--hlju-surface-primary);
+  --vp-c-bg-alt: var(--hlju-surface-secondary);
+  --vp-c-bg-soft: var(--hlju-surface-secondary);
+  --vp-c-bg-elv: var(--hlju-surface-elevated);
+  --vp-c-text-1: var(--hlju-text-primary);
+  --vp-c-text-2: var(--hlju-text-secondary);
+  --vp-c-text-3: var(--hlju-text-tertiary);
+  --vp-c-divider: var(--hlju-border-default);
+  --vp-c-gutter: var(--hlju-border-subtle);
+  --vp-c-brand-1: var(--hlju-accent-primary);
+  --vp-c-brand-2: #2f6b9d;
+  --vp-c-brand-3: #d9e8f4;
+  --vp-c-brand-soft: #e8f1f8;
+  --vp-font-family-base: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', Arial, sans-serif;
+  --vp-font-family-mono: 'SFMono-Regular', 'Cascadia Code', 'JetBrains Mono', monospace;
+  --vp-nav-bg-color: color-mix(in srgb, var(--hlju-surface-primary) 92%, transparent);
+  --vp-nav-backdrop-filter: saturate(120%) blur(10px);
+  --vp-nav-height: 72px;
+  --vp-sidebar-width: 260px;
+  --vp-home-hero-name-color: var(--hlju-accent-primary);
+}
+
+.dark {
+  --hlju-surface-primary: #17191c;
+  --hlju-surface-secondary: #202328;
+  --hlju-surface-elevated: #252a30;
+  --hlju-text-primary: #f6f3eb;
+  --hlju-text-secondary: #c2c7cd;
+  --hlju-text-tertiary: #9099a4;
+  --hlju-border-default: #3b424b;
+  --hlju-border-subtle: #2b3036;
+  --hlju-accent-primary: #79b4e8;
+  --hlju-accent-hover: #a9d1f2;
+  --hlju-status-warning: #e5b970;
+  --vp-c-brand-2: #a9d1f2;
+  --vp-c-brand-3: #274561;
+  --vp-c-brand-soft: #21384d;
+}
+
+.VPNavBarTitle .title {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.VPNavBarTitle .logo {
+  width: 28px;
+  height: 28px;
+  margin-right: 10px;
+}
+
+.VPHomeHero {
+  padding-top: 72px;
+  padding-bottom: 72px;
+}
+
+.VPHomeHero .name {
+  font-family: 'Noto Serif SC', 'Songti SC', serif;
+  letter-spacing: -0.04em;
+}
+
+.VPHomeHero .text {
+  max-width: 720px;
+  letter-spacing: -0.025em;
+}
+
+.VPHomeHero .tagline {
+  max-width: 620px;
+  color: var(--vp-c-text-2);
+}
+
+.VPFeature {
+  border: 1px solid var(--hlju-border-default);
+  border-radius: 12px;
+  background: var(--hlju-surface-elevated);
+  transition: transform 120ms ease-out, border-color 120ms ease-out;
+}
+
+.VPFeature:hover {
+  border-color: var(--vp-c-brand-2);
+  transform: translateY(-2px);
+}
+
+.vp-doc {
+  color: var(--vp-c-text-1);
+}
+
+.vp-doc h1,
+.vp-doc h2,
+.vp-doc h3 {
+  letter-spacing: -0.025em;
+}
+
+.vp-doc h2 {
+  border-top: 1px solid var(--hlju-border-subtle);
+  padding-top: 32px;
+}
+
+.vp-doc a {
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.vp-doc table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.vp-doc th {
+  background: var(--hlju-surface-secondary);
+  color: var(--vp-c-text-1);
+}
+
+.vp-doc td code,
+.vp-doc th code {
+  overflow-wrap: anywhere;
+}
+
+.vp-doc .custom-block {
+  border-radius: 8px;
+  border-width: 1px;
+}
+
+.vp-doc .custom-block.warning {
+  border-color: color-mix(in srgb, var(--hlju-status-warning) 48%, var(--hlju-border-default));
+}
+
+.route-note {
+  margin: 24px 0;
+  padding: 16px 20px;
+  border-left: 3px solid var(--vp-c-brand-1);
+  background: var(--hlju-surface-secondary);
+  color: var(--vp-c-text-2);
+}
+
+.route-note strong {
+  color: var(--vp-c-text-1);
+}
+
+.vp-doc img {
+  border: 1px solid var(--hlju-border-default);
+  border-radius: 8px;
+  background: var(--hlju-surface-secondary);
+}
+
+@media (max-width: 768px) {
+  .VPHomeHero {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .VPHomeHero .name {
+    white-space: normal;
+  }
+
+  .vp-doc table {
+    display: block;
+    overflow-x: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
